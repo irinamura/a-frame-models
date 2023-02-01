@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+  </head>
+  <body>
+    <a-scene embedded arjs>
+      <a-marker preset="hiro">
+        <a-sphere radius="0.5" src="sonne.jpg"> </a-sphere>
+        <a-entity
+          animation="property:rotation; 
+                        to:0 360 0; 
+                        dur:100000; 
+                        loop:true; 
+                        easing:linear"
+        >
+          <a-entity
+            position="1 0 0"
+            animation="property:rotation; 
+                          to:0 360 0; 
+                          dur:10000; 
+                          loop:true; 
+                          easing:linear"
+          >
+            <a-sphere
+              radius="0.125"
+              src="erde.jpg"
+              animation="property:rotation; 
+                            to:0 360 0; 
+                            dur:1000; 
+                            loop:true; 
+                            easing:linear"
+            >
+            </a-sphere>
+            <a-entity position="0.3 0 0">
+              <a-sphere radius="0.0525" src="mond.jpg"> </a-sphere>
+            </a-entity>
+          </a-entity>
+        </a-entity>
+      </a-marker>
+      <a-camera position="0 0 0"> </a-camera>
+    </a-scene>
+  </body>
+</html>
